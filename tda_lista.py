@@ -1,4 +1,3 @@
-
 def criterio(dato, campo=None):
     dic = []
     if(hasattr(dato, '__dict__')):
@@ -115,7 +114,10 @@ class Lista():
                     cont+=1
                     aux1=aux1.sig
             aux = aux.sig
-        print(f'promedio del nivel de los pokemons de {entr} = {aux2/cont}')
+        if cont != 0:
+            print(f'promedio del nivel de los pokemons de {entr} = {aux2/cont}')
+        else:
+            print('no se encontro el entrenador')
 
     def barrido_pokemons_especificos(self):
         aux = self.__inicio
@@ -347,117 +349,3 @@ class Lista():
             aux = aux.sig
         return mayor
 
-# cadena = 'hola'
-# cadena.startswith('C')
-# print(cadena[0])
-
-# class Persona:
-
-#     def __init__(self, apellido, nombre, dni):
-#         self.apellido = apellido
-#         self.nombre = nombre
-#         self.dni = dni
-#         self.telefono = None
-    
-#     def __str__(self):
-#         return f"{self.apellido} {self.nombre}, {self.dni}"
-
-
-
-# p = Persona('A', 'A', 3)
-# num = 45
-# cadena = 'hola'
-# print(criterio(p, 'mail'))
-# print(criterio(p, 'apellido'))
-# print(criterio(num))
-# print(criterio(num, 'tel'))
-# print(criterio(cadena, 'mail'))
-# print(criterio(cadena))
-
-
-# l = Lista()
-
-# l.insertar(Persona('A', 'A', 7), 'nombre')
-# l.insertar(Persona('C', 'C', 2), 'nombre')
-# l.insertar(Persona('A', 'A', 11), 'nombre')
-# l.insertar(Persona('B', 'Z', 1), 'nombre')
-# l.insertar(Persona('B', 'H', 10), 'nombre')
-# l.insertar(Persona('B', 'X', 4), 'nombre')
-
-# Persona dni = 5 nombre = G
-
-
-
-
-# l.eliminar('A', 'nombre')
-# l.insertar(11)
-# l.insertar(8)
-# l.insertar(9)
-# l.insertar(10)
-# l.insertar(5)
-
-# print(l.obtener_elemento(0))
-# print(l.obtener_elemento(-2))
-# print(l.obtener_elemento(5))
-# print(l.obtener_elemento(8))
-
-# pos = l.eliminar(8)
-# if pos is not None:
-#     l.insertar(18)
-
-
-# print(l.eliminar(5))
-# print(l.eliminar(7))
-# print(l.eliminar(10))
-
-
-# l.barrido()
-
-# print(l.busqueda(7).info)
-# print(l.busqueda(2))
-
-
-# vocales = ['A', 'E',.....]
-
-# for vocal in vocale:
-#     aux = l.eliminar(vocal)
-#     while(aux is not None):
-#         aux = l.eliminar(vocal)
-
-# class Weather():
-
-#     def __init__(self, id, temp, hum, pres):
-#         self.id = id
-#         self.temp = temp
-#         self.hum = hum
-#         self.pres = pres
-
-#     def __str__(self):
-#         return f'{self.id} - {self.temp} - {self.hum} - {self.pres}'
-
-
-# lista_estaciones = Lista()
-
-# lista_estaciones.insertar('A')
-# lista_estaciones.insertar('G')
-# lista_estaciones.insertar('L')
-# lista_estaciones.insertar('O')
-# lista_estaciones.insertar('Y')
-
-
-# # lista_estaciones.barrido()
-
-# clima = Weather(24, 15, 80, 1004)
-# clima2 = Weather(12, 20, 80, 1024)
-# estacion = lista_estaciones.busqueda('L')
-# estacion.sublista.insertar(clima, 'id')
-# estacion.sublista.insertar(clima2, 'id')
-
-# lista_estaciones.barrido_lista_lista()
-
-# clima_buscado = estacion.sublista.busqueda(12, 'id')
-# if(clima_buscado):
-#     clima_buscado.info.hum = 90
-
-# print()
-# lista_estaciones.barrido_lista_lista()

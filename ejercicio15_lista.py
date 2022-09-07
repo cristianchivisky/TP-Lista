@@ -1,4 +1,4 @@
-from lista import Lista
+from tda_lista import Lista
 from random import randint, choice
 
 class Entrenador:

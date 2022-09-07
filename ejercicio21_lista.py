@@ -1,4 +1,4 @@
-from lista import Lista
+from tda_lista import Lista
 
 class Pelicula:
 
@@ -29,19 +29,27 @@ for pelicula in peliculas:
 
 
 lista_peliculas.barrido()
-#print('ingrese el año de estreno')
-#anio_elegido=int(input())
-#lista_peliculas.barrido_por_anio(anio_elegido)
+print('ingrese el año de estreno')
+anio_elegido=int(input())
+lista_peliculas.barrido_por_anio(anio_elegido)
 print()
 pos=lista_peliculas.mayor_de_lista('recaudacion')
 print(f'pelicula que mas recaudo: {pos.info}')
 print()
 lista_peliculas.barrido_mayor_valoracion()
 lista_peliculas2 = Lista()
-crit = input('ingrese el criterio por el cual quiere ordenar la lista: ')
-for pelicula in peliculas:
-    lista_peliculas2.insertar(Pelicula(pelicula['name'],
-                                           pelicula['vp'],
-                                           pelicula['ae'],
-                                           pelicula['rec']), crit)
-lista_peliculas2.barrido()
+criterios=['nombre', 'recaudacion', 'anio_estreno', 'valoracion_publico']
+dicc=['name', 'rec', 'ae', 'vp']
+var=0
+for crit in criterios:
+    for pelicula in peliculas:
+        lista_peliculas2.insertar(Pelicula(pelicula['name'],
+                                            pelicula['vp'],
+                                            pelicula['ae'],
+                                            pelicula['rec']), crit)
+    print()
+    print(f'listado ordenado por  {crit}')
+    lista_peliculas2.barrido()
+    for pelicula in peliculas:
+        lista_peliculas2.eliminar(pelicula[dicc[var]], crit)
+    var+=1
